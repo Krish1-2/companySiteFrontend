@@ -1,0 +1,30 @@
+@keyframes slide_animation {
+    0% { left: 0; }
+    25% { left: 0; } /* Pause at 0px */
+    35% { left: 1200px; }
+    60% { left: 1200px; } /* Pause at 1200px */
+    70% { left: 2400px; }
+    95% { left: 2400px; } /* Pause at 2400px */
+    100% { left: 0; } /* Back to 0px */
+}
+
+.slide-images {
+    width: 3600px;
+    height: 800px;
+    margin-left: -2400px; /* To center the initial image */
+    position: relative;
+    animation-name: slide_animation;
+    animation-duration: 33s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    white-space: nowrap; /* Prevent line breaks between images */
+}
+
+.img-container {
+    height: 200px;
+    width: 1200px;
+    position: relative;
+    display: inline-block; /* Display images inline */
+    white-space: normal; /* Allow line breaks within images */
+}

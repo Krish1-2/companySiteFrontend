@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Navbar from './components/navbar/navbar';
+import Home from './pages/home';
+import Footer from './components/footer/footer';
+import Pipes from './pages/Products/pipes/pipes';
+import Wires from './pages/Products/wires/wires'
+import Switches from './pages/Products/switches/switches'
+import Cables from './pages/Products/cables/cables'
+import Contact from './pages/contact/contact';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='head p-4'><p className="px-3">HITESH</p><img src='./images/logo.png ' alt='logo' className='head-img'/><p className='px-3'>ELECTRICALS</p></div>
+    <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route  path='/' exact element={<Home />} />
+          <Route path='/pipes' element={<Pipes/>}/>
+          <Route path='/wires' element={<Wires/>}/>
+          <Route path='/switches' element={<Switches/>}/>
+          <Route path='/cables' element={<Cables/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+        </Routes>
+        <Footer/>
+    </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.foot-main-div{
+    height: 20%;
+    background: #330258;   
+    padding: 3%;
+}
+
+.text-foot{
+    padding: 1%;
+    color: #FFF;
+text-align: center;
+font-family: Roboto Slab;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.foot-button{
+    background-color: transparent;
+    color: white; 
+    border: 1px solid white;
+    padding: 10px 20px; 
+}
+
+.foot-button:hover{
+background-color: #1c0130;
+}
