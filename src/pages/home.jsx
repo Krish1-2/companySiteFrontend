@@ -40,11 +40,11 @@ export default function Home(){
 
 const cards={'TIME MANAGEMENT':'Lorem ipsum dolor sit aveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate',
         'CREDIT':'Lorem ipsum dolor sit aveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate',
-        'TRUST':'Lorem ipsum dolor sit aveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate'}
+        'WAREHOUSING':'Lorem ipsum dolor sit aveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate'}
 
 const pictures={ 'TIME MANAGEMENT': '/images/time.jpeg',
 'CREDIT': '/images/credit.jpeg',
-'TRUST': '/images/trust.jpeg'}   
+'WAREHOUSING': '/images/trust.jpeg'}   
 
 return(
     <div className="main-home-div">
@@ -52,7 +52,10 @@ return(
     <ImageSlider 
     image1="./images/homeimg2.png" 
     image2='./images/homeimg1.png' 
-    image3='./images/homeimg2.png'/>
+    image3="./images/homeimg3.png"
+    width='100%'
+    height='100vh'
+    />
      <div className="experience">
      <div className="home-logo-div">
             <img src="./images/logo.png" alt="logo"/>
@@ -92,10 +95,8 @@ return(
         <h4 className="head-exp pt-5 text-white">OUR JOURNEY</h4>
          <div className="line bg-light"/>
          <div className="space "></div>
-        <div className="text-div">
         empor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare lectus. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. 
         Elementum facilisis leo vel fringilla est ullamcorper eget. Ipsum consequat nisl vel pretium lectus quam. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Venenatis a condimentum vitae sapien pellentesque habitant. Elementum facilisis leo vel fringilla est ullamcorper. Dignissim cras tincidunt lobortis feugiat vivamus. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nibh ipsum consequat nisl vel pretium lectus quam id leo.
-        </div>
         </div>
         </div>
      <div className="space"></div> 

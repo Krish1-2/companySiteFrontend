@@ -16,7 +16,12 @@ export default function Navbar() {
             <Link to='/switches'>SWITCHES</Link>
           </div>
         </div>
-        <Link className='nav-link' to='/company'>COMPANY</Link>
+        <div className="dropdown">
+          <Link className='nav-link'>DOWNLOAD</Link>
+          <div className="dropdown-content">
+              <Link><a href="/listPrice.pdf" download>PRICE LIST</a></Link>
+            </div>
+          </div>
         <Link className='nav-link' to='/contact'>CONTACT US</Link>
       </div>
     </div>

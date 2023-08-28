@@ -4,6 +4,6 @@ import Product from "../../../components/product/product";
 
 export default function Pipes(){
     return(
-        <Product category="CABLES" />
+        <Product category="cables" />
     )
 }
