@@ -8,6 +8,10 @@ import Wires from './pages/Products/wires/wires'
 import Switches from './pages/Products/switches/switches'
 import Cables from './pages/Products/cables/cables'
 import Contact from './pages/contact/contact';
+import RegisterForm from './components/auth/RegisterForm';
+import LoginForm from './components/auth/LoginForm';
+
+
 
 function App() {
   return (
@@ -17,6 +21,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route  path='/' exact element={<Home />} />
+          <Route path="/register" element={<RegisterForm />} /> {/* Updated */}
+          <Route path="/login" element={<LoginForm />} /> {/* Updated */}      
           <Route path='/pipes' element={<Pipes/>}/>
           <Route path='/wires' element={<Wires/>}/>
           <Route path='/switches' element={<Switches/>}/>
