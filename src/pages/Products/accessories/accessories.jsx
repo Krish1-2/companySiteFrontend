@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Product from "../../../components/product/product";
 import axios from "axios";
 
-export default function Pipes() {
+export default function Switches() {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000?item=pipes'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:8000?item=accessories'); // Replace with your API endpoint
         // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
         setBrands(brandNames);
@@ -22,7 +22,7 @@ export default function Pipes() {
 
   return (
     <Product
-      category="pipes"
+      category="accessories"
       mainimage1='./images/pipes/mainCard1.png'
       mainimage2='./images/pipes/pipe1.png'
       mainimage3='./images/pipes/mainCard3.png'

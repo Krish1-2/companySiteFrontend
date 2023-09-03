@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
 import './Login.css'; // Import your CSS file
-import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate and Link
+import { useNavigate, Link } from 'react-router-dom'; 
 
 function Login() {
     const initialValues = {
@@ -12,7 +12,7 @@ function Login() {
 
     const [isLoggedIn, setLoggedIn] = useState(false);
 
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate(); 
 
     const handleSubmit =  (values, { resetForm }) => {
         axios
@@ -21,16 +21,15 @@ function Login() {
                 console.log('Login successful', response);
                 sessionStorage.setItem('user', JSON.stringify(response.data.user));
                 alert('Login successful');
-                setLoggedIn(true); // Set isLoggedIn to true
+                setLoggedIn(true); 
             })
             .catch((error) => {
-                alert('Login failed'); // Handle login failure, display error messages, etc.
+                alert('Login failed. Enter correct credentials'); 
                 resetForm();
             });
     };
 
     if (isLoggedIn) {
-        // Redirect to the "/" page if isLoggedIn is true
         navigate('/');
     }
 

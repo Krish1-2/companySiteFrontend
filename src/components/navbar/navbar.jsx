@@ -88,6 +88,7 @@ export default function Navbar() {
                <Link to='/wires'>WIRES</Link>
                <Link to='/cables'>CABLES</Link>
                <Link to='/switches'>SWITCHES</Link>
+               <Link to='/accessories'>ACCESSORIES</Link>
              </div>
            </div>
            <div className="dropdown">

@@ -5,7 +5,7 @@ import axios from "axios";
 import Card2 from '../card/card'
 
 export default function Product({category,mainimage1,mainimage2,mainimage3,company,brands}){
-brands=['Kalki','Kenter'];
+// brands=['Kalki','Kenter'];
 const [selectedBrandIndex, setSelectedBrandIndex] = useState(null);
 const [tableData, setTableData] = useState([]);
 

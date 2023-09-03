@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
-import './Register.css'; // Import your CSS file
-import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate and Link
+import './Register.css'; 
+import { useNavigate, Link } from 'react-router-dom'; 
 
 function Register() {
     const initialValues = {
@@ -20,8 +20,6 @@ function Register() {
             .then((response) => {
                 console.log('Registration successful', response);
                 alert('Registered successfully');
-                // Redirect to the login page
-                // Store user values in session storage
                 sessionStorage.setItem('user', JSON.stringify(values));
                 // Reset the form
                 setLoggedIn(true);
@@ -32,8 +30,7 @@ function Register() {
             });
     };
     if (isLoggedIn) {
-        // Redirect to the "/" page if isLoggedIn is true
-        navigate('/login');
+        navigate('/');
     }
 
     return (

@@ -10,7 +10,7 @@ import Cables from './pages/Products/cables/cables'
 import Contact from './pages/contact/contact';
 import RegisterForm from './pages/auth/RegisterForm';
 import LoginForm from './pages/auth/LoginForm';
-
+import Accessories from './pages/Products/accessories/accessories';
 
 
 
@@ -29,6 +29,7 @@ function App() {
           <Route path='/switches' element={<Switches/>}/>
           <Route path='/cables' element={<Cables/>}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/accessories' element={<Accessories/>}/>
         </Routes>
         <Footer/>
     </BrowserRouter>
