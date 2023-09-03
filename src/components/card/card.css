@@ -1,7 +1,7 @@
 .flip-container {
     perspective: 1000px; /* Depth of the 3D space */
     width:33.33%; /* Adjust the size as needed */
-    height: 50vh; /* Adjust the size as needed */
+    height: 100%; /* Adjust the size as needed */
   }
   
   /* The flipper element */
@@ -9,7 +9,8 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d; 
-    transition: transform 0.5s; /* Add a smooth transition effect */
+    transition: transform 0.5s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a smooth transition effect */
   }
   
   
@@ -26,6 +27,12 @@
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
+    border: 2px solid transparent; /* You can adjust the border width and style */
+  transition: border-color 0.3s ease; 
+  }
+  
+  .front:hover {
+    border-color: #FF5722; /* Change the border color to your desired color */
   }
   
 h2{

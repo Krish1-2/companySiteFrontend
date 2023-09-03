@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import './products.css'
 import ImageSlider from '../imageSlider/imageSlider'
 import axios from "axios";
+import Card2 from '../card/card'
 
 export default function Product({category,mainimage1,mainimage2,mainimage3,company,brands}){
 brands=['Kalki','Kenter'];
@@ -10,7 +11,6 @@ const [tableData, setTableData] = useState([]);
 
 const rates=async (index)=>{
     setSelectedBrandIndex(index);
-    const brandName=brands[index];
     const item=category;
 
     console.log(item)
@@ -29,6 +29,8 @@ const rates=async (index)=>{
 const filteredTableData = selectedBrandIndex !== null
 ? tableData.filter(item => item.brand === brands[selectedBrandIndex])
 : [];
+
+
 
     return(
         <div className="product-main-div">
@@ -65,28 +67,21 @@ const filteredTableData = selectedBrandIndex !== null
             <div className="line"/>
             <div className="space"></div> 
             <h1>CLICK ON A BRAND TO GET RATES</h1>
-            <div className="product-table">
+            <div >
                 {selectedBrandIndex !== null && (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>SR.NO</th>
-                                <th>DESCRIPTION</th>
-                                <th>SIZE</th>
-                                <th>LIST PRICE</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredTableData.map((item, index) => (
-                                <tr key={index}>
-                                    <td>{index}</td>
-                                    <td>{item.desc}</td>
-                                    <td>{item.size}</td>
-                                    <td>{item.rate}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <div className="product-table">
+                        {filteredTableData.map((item, index) => {
+                                const text = `description:${item.desc}\nrate:${item.rate}\nsize:${item.rate}`;
+                                
+                                const textWithLineBreaks = (
+                                    <div dangerouslySetInnerHTML={{ __html: text.replace(/\n/g, '<br>') }} />
+                                );                       
+                                return (
+                                    
+                                    <Card2 text={textWithLineBreaks} heading={item.desc} image="./images/time.jpeg" />   
+                                );
+                                })}
+                    </div>
                 )}
             </div>
             <div className="space"></div> 

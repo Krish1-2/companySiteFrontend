@@ -1,7 +1,7 @@
 import React from "react";
 import './home.css';
-import Card from "../components/card/card";
-import ImageSlider from '../components/imageSlider/imageSlider'
+import Card from "../../components/card/card";
+import ImageSlider from '../../components/imageSlider/imageSlider'
 import { useEffect } from "react";
 
 export default function Home(){
@@ -10,8 +10,7 @@ export default function Home(){
     // Select all elements with the class "line"
     const lines = document.querySelectorAll(".line");
 
-    // Calculate the scroll position to trigger the animation
-    const triggerPosition = window.innerHeight / 1; // Adjust as needed
+    const triggerPosition = window.innerHeight / 1; 
 
     const scrollHandler = () => {
       const scrollY = window.scrollY;

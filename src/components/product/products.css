@@ -76,15 +76,18 @@ font-weight: 500;
 }
 
 .product-table{
-    background-color: #1A042C;
+    background-color: white;
     width: 150vh;
-    /* height: 20vh; */
+    display: flex;
+    height: 30vh;
     margin-top: 20px;
     color: #ccc;
 }
 
+
+
   
-  .product-table table {
+  /* .product-table table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ccc;
@@ -110,5 +113,5 @@ font-weight: 500;
     background-color: #f2f2f2;
     color: #000;
   }
-  
+   */
  

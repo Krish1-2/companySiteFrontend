@@ -23,6 +23,7 @@ export default function Navbar() {
             </div>
           </div>
         <Link className='nav-link' to='/contact'>CONTACT US</Link>
+        <Link className='nav-link' to='/review'>REVIEWS</Link>
       </div>
     </div>
   );
