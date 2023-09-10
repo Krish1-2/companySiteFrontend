@@ -1,7 +1,7 @@
 .flip-container {
     perspective: 1000px; /* Depth of the 3D space */
-    width:33.33%; /* Adjust the size as needed */
-    height: 100%; /* Adjust the size as needed */
+    width:100%; 
+    height: 100%; 
   }
   
   /* The flipper element */

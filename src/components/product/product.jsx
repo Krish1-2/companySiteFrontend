@@ -5,32 +5,32 @@ import axios from "axios";
 import Card2 from '../card/card'
 
 export default function Product({category,mainimage1,mainimage2,mainimage3,company,brands}){
-// brands=['Kalki','Kenter'];
-const [selectedBrandIndex, setSelectedBrandIndex] = useState(null);
-const [tableData, setTableData] = useState([]);
 
-const rates=async (index)=>{
-    setSelectedBrandIndex(index);
-    const item=category;
-
-    console.log(item)
-    await axios.get(`http://localhost:8000?item=${item}`)
-    .then(
-    (res)=>{
-        setTableData(res.data)
+    const [selectedBrandIndex, setSelectedBrandIndex] = useState(null);
+    const [tableData, setTableData] = useState([]); 
+  
+    const rates = async (index) => {
+      setSelectedBrandIndex(index);
+      const item = category;
+  
+      console.log(item);
+      await axios.get(`http://localhost:8000?item=${item}`)
+        .then(
+          (res) => {
+            setTableData(res.data);
+            console.log(tableData);
+          }
+        )
+        .catch(err => {
+          console.log(err);
+        });
     }
-    )
-    .catch(err=>{
-        console.log(err);
-      }
-      )
-}
-
-const filteredTableData = selectedBrandIndex !== null
-? tableData.filter(item => item.brand === brands[selectedBrandIndex])
-: [];
-
-
+  
+    const filteredTableData = () => {
+      return selectedBrandIndex !== null
+        ? tableData.filter((item) => item.brand === brands[selectedBrandIndex])
+        : [];
+    };
 
     return(
         <div className="product-main-div">
@@ -70,15 +70,17 @@ const filteredTableData = selectedBrandIndex !== null
             <div >
                 {selectedBrandIndex !== null && (
                     <div className="product-table">
-                        {filteredTableData.map((item, index) => {
+                        {filteredTableData().map((item, index) => {
                                 const text = `description:${item.desc}\nrate:${item.rate}\nsize:${item.rate}`;
                                 
                                 const textWithLineBreaks = (
                                     <div dangerouslySetInnerHTML={{ __html: text.replace(/\n/g, '<br>') }} />
                                 );                       
                                 return (
-                                    
-                                    <Card2 text={textWithLineBreaks} heading={item.desc} image="./images/time.jpeg" />   
+                                    <div className="card2Space">
+                                    <Card2 text={textWithLineBreaks} heading={item.desc} image="./images/time.jpeg" /> 
+                                    <div className="card2Space1"></div>
+                                    </div>
                                 );
                                 })}
                     </div>

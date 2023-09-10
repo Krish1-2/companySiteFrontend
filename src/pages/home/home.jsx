@@ -62,7 +62,7 @@ return(
       <div className="space"></div> 
         <div className="qoute-text">WHERE PERFECTION MEETS EXCELLENCE</div>
          <div class="dotted-line"></div>
-         <h4 className="head-exp pt-5 ">80 YEARS OF EXPERIENCE</h4>
+         <h4 className="head-exp pt-5 ">50 YEARS OF EXPERIENCE</h4>
          {/* <div className="line-container"> */}
       <div className="line"></div>
         {/* </div> */}

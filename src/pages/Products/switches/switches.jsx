@@ -22,7 +22,7 @@ export default function Switches() {
 
   return (
     <Product
-      category="switches"
+      category="switchGear"
       mainimage1='./images/pipes/mainCard1.png'
       mainimage2='./images/pipes/pipe1.png'
       mainimage3='./images/pipes/mainCard3.png'

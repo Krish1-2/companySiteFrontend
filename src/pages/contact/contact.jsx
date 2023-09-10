@@ -53,7 +53,7 @@ export default function Contact(){
           })  
           return (
             <form onSubmit={formik.handleSubmit} className='signUpForm'>
-            <h2 className="text-dark">Leave your message here!</h2>
+            <h2>Leave your message here!</h2>
               <div className='label w-100 align-item-center'>EMAIL:</div>
               <br/>
               <input

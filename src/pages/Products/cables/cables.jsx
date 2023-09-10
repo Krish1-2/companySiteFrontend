@@ -11,6 +11,7 @@ export default function Cables() {
         const response = await axios.get('http://localhost:8000?item=cables'); // Replace with your API endpoint
         // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
+        console.log(brands);
         setBrands(brandNames);
       } catch (error) {
         console.error("Error fetching brands:", error);

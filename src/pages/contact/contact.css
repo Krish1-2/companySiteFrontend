@@ -38,7 +38,7 @@ font-weight: 400;
 .contact-form{
 display: flex;
 border: 2px #000 ;
-background-color: #0474c4;
+background-color: #330258;
 align-items: center;
 }
 
@@ -61,11 +61,12 @@ font-weight: 400;
     display: inline-block;
     width: auto;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #fff;
     padding: 5px;
     outline: none;
-    background-color: #0474c4;
+    background-color: #330258;
     width: 50%;
+    color: white;
 }
 
 .error{

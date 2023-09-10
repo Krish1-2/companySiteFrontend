@@ -12,6 +12,7 @@ export default function Wires() {
         // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
         setBrands(brandNames);
+        console.log(brands);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }

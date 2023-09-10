@@ -92,7 +92,7 @@ export default function Navbar() {
              </div>
            </div>
            <div className="dropdown">
-             <Link className='nav-link' to='/download'>DOWNLOAD</Link>
+             <Link className='nav-link' >DOWNLOAD</Link>
              <div className="dropdown-content">
                <a href="/listPrice.pdf" download>PRICE LIST</a>
              </div>
