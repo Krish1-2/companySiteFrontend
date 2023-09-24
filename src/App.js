@@ -17,7 +17,6 @@ import Review from './pages/review/review';
 function App() {
   return (
     <div className="App">
-    <div className='head p-4'><p className="px-3">HITESH</p><img src='./images/logo.png ' alt='logo' className='head-img'/><p className='px-3'>ELECTRICALS</p></div>
     <BrowserRouter>
         <Navbar />
         <Routes>

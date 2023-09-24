@@ -55,10 +55,20 @@ export default function Review() {
               const { email, name, review,product} = values;
               alert(JSON.stringify(values, null, 2));
               console.log( email, name, review,product)
+
               const post = { email:email,name:name,review:review,product:product,date:date}  
-              await axios.post(`http://localhost:8000/review`,post)
+              await axios.post(`http://127.0.0.1:8000/review`,post)
               .then(
                 alert("thankyou for the feedback")
+              )
+              .catch(err => {
+                console.log(err);
+              });
+
+              await axios.get(`http://127.0.0.1:8000/review`)
+              .then(res=>{
+                console.log(res.data)
+               }
               )
               .catch(err => {
                 console.log(err);
@@ -141,7 +151,7 @@ export default function Review() {
     return (
         <div className='review-main-div'>
             <div className='review-pic-div'>
-                <div>
+                <div className='cover-div'>
                     <h2>REVIEW</h2>
                     <h4 className='text-light'>Your opinion matters</h4>
                 </div>

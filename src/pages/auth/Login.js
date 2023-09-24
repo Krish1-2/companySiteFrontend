@@ -18,7 +18,7 @@ function Login() {
         axios
             .post('http://127.0.0.1:8000/api/user/login/', values)
             .then((response) => {
-                console.log('Login successful', response);
+                console.log(values,response);
                 sessionStorage.setItem('user', JSON.stringify(response.data.user));
                 alert('Login successful');
                 setLoggedIn(true); 

@@ -18,7 +18,7 @@ function Register() {
         axios
             .post('http://127.0.0.1:8000/api/user/register/', values)
             .then((response) => {
-                console.log('Registration successful', response);
+                console.log('Registration successful', response,values);
                 alert('Registered successfully');
                 sessionStorage.setItem('user', JSON.stringify(values));
                 // Reset the form

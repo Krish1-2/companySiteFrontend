@@ -34,21 +34,33 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
 
     return(
         <div className="product-main-div">
-            <div className="space"></div> 
-            <ImageSlider image1={mainimage1} image2={mainimage2} image3={mainimage3} width='100%'  height='90vh'/>
+            <ImageSlider 
+            image1={mainimage1} 
+            image2={mainimage2} 
+            image3={mainimage3} 
+            width='100%'  
+            height='90vh'/>
             <div className="product-head-div">
             <h2 className="pic-head">{category.toUpperCase()}</h2>
             </div>
         <div className="text-product">
             <div className="space"></div> 
             <div className="w-100 product-details">
-                <div className="w-50 product-details-text">
+                <div className=" product-details-text desktop">
                 <h1 className="product-h1">OUR {category.toUpperCase()}</h1>
                 empor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare lectus. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. 
                 Elementum facilisis leo vel fringilla est ullamcorper eget. Ipsum consequat nisl vel pretium lectus quam. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Venenatis a condimentum vitae sapien pellentesque habitant. Elementum facilisis leo vel fringilla est ullamcorper. Dignissim cras tincidunt lobortis feugiat vivamus. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nibh ipsum consequat nisl vel pretium lectus quam id leo.
                 </div>
-                <div className="w-50 p-2">
-                <ImageSlider image1="./images/pipes/smallCard1.png" image2="./images/pipes/smallCard2.png" image3="./images/pipes/smallCard3.png" width='40%' height='50vh'/> 
+                <div className=" product-details-text mobile">
+                <h1 className="product-h1">OUR {category.toUpperCase()}</h1>
+                empor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare lectus. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. 
+                </div>
+                <div className=" cardSlider">
+                <ImageSlider 
+                image1="./images/pipes/smallCard1.png" 
+                image2="./images/pipes/smallCard2.png"
+                image3="./images/pipes/smallCard3.png" 
+                width='40%' height='50vh'/> 
                 </div>
             </div>
             <div className="space"></div> 

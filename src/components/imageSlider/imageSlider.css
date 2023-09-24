@@ -1,5 +1,5 @@
 .imagesliderDiv {
-   
+  object-fit: cover;
   }
   
   .imagesliderDiv.show {
