@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import './products.css'
 import ImageSlider from '../imageSlider/imageSlider'
 import axios from "axios";
@@ -8,7 +8,8 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
 
     const [selectedBrandIndex, setSelectedBrandIndex] = useState(null);
     const [tableData, setTableData] = useState([]); 
-  
+    const [width,setWidth]=useState();
+
     const rates = async (index) => {
       setSelectedBrandIndex(index);
       const item = category;
@@ -31,6 +32,24 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
         ? tableData.filter((item) => item.brand === brands[selectedBrandIndex])
         : [];
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+          const windowWidth = window.innerWidth;
+          if (windowWidth <= 800) {
+            setWidth('100%');
+          } else {
+            setWidth('40%');
+          }
+        };
+    
+        handleResize();
+     window.addEventListener('resize', handleResize);
+     return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+
 
     return(
         <div className="product-main-div">
@@ -60,7 +79,8 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
                 image1="./images/pipes/smallCard1.png" 
                 image2="./images/pipes/smallCard2.png"
                 image3="./images/pipes/smallCard3.png" 
-                width='40%' height='50vh'/> 
+                width={width}
+                height='50vh'/> 
                 </div>
             </div>
             <div className="space"></div> 

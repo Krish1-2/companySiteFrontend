@@ -3,7 +3,8 @@ import './card.css';
 
 export default function Card({ text, heading, image }) {
     const cardStyle = {
-        backgroundImage: `url(${image})`,
+      background: `url(${image}) center center no-repeat`,
+      backgroundSize: 'cover',
       };
     
   return (

@@ -26,11 +26,7 @@ export default function Contact(){
         }
       });
      
-    };
-
-    function handleResize() {
-      alert('Please refresh after changing the screen width');
-    }  
+    };  
     window.addEventListener("scroll", scrollHandler);
 
     return () => {

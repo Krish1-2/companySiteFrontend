@@ -41,17 +41,11 @@ export default function Home(){
      
     };
 
-    function handleResize() {
-      alert('Please refresh after changing the screen width');
-    }  
-
-    window.addEventListener('resize', handleResize);
-
+   
     window.addEventListener("scroll", scrollHandler);
 
     return () => {
       window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
   
