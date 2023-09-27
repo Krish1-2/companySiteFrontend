@@ -106,7 +106,6 @@ position: relative;
   background-image: url('../../../public/images/journey.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,8 +113,15 @@ position: relative;
   padding: 3%;
 }
 
+.logo{
+  width: 20%;
+  position: absolute;
+  left:38%;
+  top:40%;
+  z-index: 5;
+}
 
-@media only screen and (min-width:1200px){
+@media only screen and (min-width:800px){
 
 .mobile{
   display: none;
@@ -136,7 +142,49 @@ position: relative;
 
 }
 
-@media only screen  and (max-width:1200px) {
+
+@media only screen and (min-width:575px) and (max-width:800px){
+
+  .logo{
+    width: 30%;
+  }
+
+  .prompt{
+    text-align: left;
+    font-weight: bold;
+  }
+  
+.desktop{
+  display: none;
+}
+
+.qoute-text{
+  font-family: Oregano;
+  font-size: 3rem;
+  font-weight: 400;
+  }
+
+  .qoute-image{
+    width: 90%;
+    height: 40vh;
+  }
+  .blackend-qoute-div{
+    font-size: 1.9rem;
+    width: 65%;
+  }
+
+  .cards{
+    flex-direction: column;
+    height:120vh;
+  }
+
+}
+
+@media only screen  and (max-width:575px) {
+  .logo{
+  display: none;
+  }
+
   .prompt{
     text-align: left;
     font-weight: bold;

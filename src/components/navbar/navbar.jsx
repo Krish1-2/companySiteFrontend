@@ -6,6 +6,8 @@ export default function Navbar() {
   
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpenDownload, setIsDropdownOpenDownload] = useState(false);
 
   const handleLogin = () => {
     setIsAuthenticated(true);
@@ -19,11 +21,21 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+    
+  };
+
+  const toggleDropdownDownload = () => {
+    setIsDropdownOpenDownload(!isDropdownOpenDownload);
+    console.log(isDropdownOpenDownload);
+  };
+
   return (
     <div>
     <div className='mobile-view-navbar'>
     <nav className="navbar p-2">
-    <img src='./images/logo white.png' style={{width:'70px',height:"70px"}}/>
+    <img src='./images/logo white.png' style={{width:'70px',height:"70px"}} alt='logo'/>
 
       <div className="navbar-container">
       <button className="menu-button" onClick={toggleMenu}>
@@ -37,23 +49,31 @@ export default function Navbar() {
         <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>
         <Link className='nav-link' to='/'>HOME</Link>
           <div className="dropdown">
-             <Link className='nav-link'>PRODUCTS</Link>
-             <div className="dropdown-content">
-               <Link to='/pipes'>PIPES</Link>
-               <Link to='/wires'>WIRES</Link>
-               <Link to='/cables'>CABLES</Link>
-               <Link to='/switches'>SWITCHES</Link>
-               <Link to='/accessories'>ACCESSORIES</Link>
-             </div>
+          <Link className='nav-link' onClick={toggleDropdown}>PRODUCTS</Link>
+             {isDropdownOpen && (
+                  <ul className="dropdown-content">
+                    <Link to='/pipes'>PIPES</Link>
+                    <Link to='/wires'>WIRES</Link>
+                    <Link to='/cables'>CABLES</Link>
+                    <Link to='/switches'>SWITCHES</Link>
+                    <Link to='/accessories'>ACCESSORIES</Link>
+                  </ul>
+                )}
            </div>
+
            <div className="dropdown">
-             <Link className='nav-link' >DOWNLOAD</Link>
-             <div className="dropdown-content">
+             <Link className='nav-link' onClick={toggleDropdownDownload}>DOWNLOAD</Link>
+             {isDropdownOpenDownload && (
+                  <ul className="dropdown-content">
                <a href="/listPrice.pdf" download>PRICE LIST</a>
-             </div>
-           </div>
+               </ul>
+                )}
+                </div>
+          
            <Link className='nav-link' to='/contact'>CONTACT US</Link>
            <Link className='nav-link' to='/review'>REVIEWS</Link>
+           {/* <Link className='nav-link' to='/contact'>LOGIN</Link>
+           <Link className='nav-link' to='/review'>REGISTER</Link> */}
         </ul>
       </div>
     </nav>

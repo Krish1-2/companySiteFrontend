@@ -2,7 +2,7 @@ import React from "react";
 import './home.css';
 import Card from "../../components/card/card";
 import ImageSlider from '../../components/imageSlider/imageSlider'
-import { useEffect,useState } from "react";
+import { useEffect} from "react";
 
 export default function Home(){
 
@@ -11,8 +11,6 @@ export default function Home(){
     const texts=document.querySelectorAll(".animate");
     
     const triggerPosition = window.innerHeight / 1; 
-
-    const width = window.innerWidth;
  
     const scrollHandler = () => {
       const scrollY = window.scrollY;
@@ -61,6 +59,7 @@ const pictures={ 'TIME MANAGEMENT': '/images/time.jpeg',
 
 return(
     <div className="main-home-div">
+    <img src="./images/logo.png" alt="logo" className="logo"/>
     <ImageSlider 
     image1="./images/homeimg2.png" 
     image2='./images/homeimg1.png' 
@@ -69,7 +68,7 @@ return(
     height='90vh'
     />
      <div className="experience">
-      <div className="space"></div> 
+      <div className="space "></div> 
         <div className="qoute-text desktop" >WHERE PERFECTION MEETS EXCELLENCE</div>
          <div class="dotted-line desktop"></div>
          <h4 className="head-exp pt-5 animate">50 YEARS OF EXPERIENCE</h4>

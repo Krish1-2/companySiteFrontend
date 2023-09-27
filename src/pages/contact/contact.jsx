@@ -186,7 +186,7 @@ export default function Contact(){
                 </div>
                   <div  className="contact-form w-100">
             <div className="maps">
-            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.6788718087587!2d72.82457009678957!3d18.945603099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce20314c9b9b%3A0x25b4a05d93e34c74!2sH.%20Vinodchandra%20%26%20Company%20-%20Hitesh%20Electricals!5e0!3m2!1sen!2sin!4v1692876879758!5m2!1sen!2sin" width="90%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>  
+            <p className="p-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.6788718087587!2d72.82457009678957!3d18.945603099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce20314c9b9b%3A0x25b4a05d93e34c74!2sH.%20Vinodchandra%20%26%20Company%20-%20Hitesh%20Electricals!5e0!3m2!1sen!2sin!4v1692876879758!5m2!1sen!2sin" width="90%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>  
             </div>
             <div className="main-form p-1"><ContactForm/></div>
         </div>

@@ -59,8 +59,10 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
             image3={mainimage3} 
             width='100%'  
             height='90vh'/>
+            <div className="qw">
             <div className="product-head-div">
             <h2 className="pic-head">{category.toUpperCase()}</h2>
+            </div>
             </div>
         <div className="text-product">
             <div className="space"></div> 
