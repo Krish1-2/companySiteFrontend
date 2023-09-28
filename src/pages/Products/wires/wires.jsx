@@ -18,7 +18,7 @@ export default function Wires() {
     };
 
     fetchData();
-  }, []);
+  }, [brands]);
 
   return (
     <Product

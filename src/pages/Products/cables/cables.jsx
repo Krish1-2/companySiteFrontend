@@ -19,7 +19,7 @@ export default function Cables() {
     };
 
     fetchData();
-  }, []);
+  }, [brands]);
 
   return (
     <Product

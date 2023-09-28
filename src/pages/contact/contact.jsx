@@ -73,8 +73,7 @@ export default function Contact(){
               const { email, name, message,phone} = values;
               alert(JSON.stringify(values, null, 2));
               console.log( email, name, message,phone)
-              const post = { email:email,name:name,message:message,phone:phone}  
-            },
+               },
   
           })  
           return (

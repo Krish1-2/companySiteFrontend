@@ -139,15 +139,6 @@ export default function Review() {
 
     const formRef = useRef(null); 
 
-    const scrollToForm = () => {
-        if (formRef.current) {
-          window.scrollTo({
-            behavior: 'smooth',
-            top: formRef.current.offsetTop,
-          });
-        }
-      };
-
     return (
         <div className='review-main-div'>
             <div className='review-pic-div'>
