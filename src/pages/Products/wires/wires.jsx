@@ -8,11 +8,10 @@ export default function Wires() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000?item=pipes'); // Replace with your API endpoint
-        // Assuming the API response contains an array of objects with brand names
+        const response = await axios.get('http://localhost:8000?item=pipes'); 
         const brandNames = response.data.map(item => item.brand);
         setBrands(brandNames);
-        console.log(brands);
+        // console.log(brands);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }
