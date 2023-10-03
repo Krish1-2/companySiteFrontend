@@ -131,6 +131,10 @@ font-weight: 400;
 }
 
 @media only screen and (max-width:800px){
+    .input{
+        width: 70%;
+    }
+
     .contact-info{
         display: flex;
         flex-direction: column;

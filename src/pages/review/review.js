@@ -79,7 +79,7 @@ export default function Review() {
           return (
             <form onSubmit={formik.handleSubmit} className='signUpForm'>
             <h3>SUBMIT A REVIEW...</h3>
-              <div className='label w-100 align-item-center'>EMAIL:</div>
+              <div className='label-review w-100 align-item-center'>EMAIL:</div>
               <br/>
               <input
                 id="email"
@@ -92,7 +92,7 @@ export default function Review() {
                {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
                <br/>
               <br/>
-              <div className='label w-100 align-item-center'>NAME:</div>
+              <div className='label-review w-100 align-item-center'>NAME:</div>
                <br/>
                <input
                 id="name"
@@ -105,7 +105,7 @@ export default function Review() {
                {formik.errors.name ? <div className='error'>{formik.errors.name}</div> : null}
                <br/>
               <br/>
-              <div className='label w-100 align-item-center'>PRODUCT:</div>
+              <div className='label-review w-100 align-item-center'>PRODUCT:</div>
                <br/>
                <input
                 id="product"
@@ -118,7 +118,7 @@ export default function Review() {
                {formik.errors.product ? <div className='error'>{formik.errors.product}</div> : null}
                <br/>
               <br/>
-              <div className='label w-100 align-item-center '>REVIEW:</div>
+              <div className='label-review w-100 align-item-center '>REVIEW:</div>
                <br/>
                <textarea
                 id="review"
@@ -143,8 +143,8 @@ export default function Review() {
         <div className='review-main-div'>
             <div className='review-pic-div'>
                 <div className='cover-div'>
-                    <h2>REVIEW</h2>
-                    <h4 className='text-light'>Your opinion matters</h4>
+                    <h2 className='text-dark'>REVIEW</h2>
+                    <h4 className='text-dark'>Your opinion matters</h4>
                 </div>
             </div>
             <div className='space'> </div>
