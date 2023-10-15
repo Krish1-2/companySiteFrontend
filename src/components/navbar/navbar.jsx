@@ -31,6 +31,10 @@ export default function Navbar() {
     console.log(isDropdownOpenDownload);
   };
 
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
+
   return (
     <div>
     <div className='mobile-view-navbar'>
@@ -106,8 +110,10 @@ export default function Navbar() {
       </div>
       <div className='login-register-div'>
         {isAuthenticated ? (
-          <div style={{display:'none'}}>
-          </div>
+          <button className='auth-reg-btn text-decoration-none text-white' onClick={handleLogout}>
+                LOGOUT
+            </button>
+   
         ) : (
           <>
             <button className='auth-reg-btn' onClick={handleLogin}>
