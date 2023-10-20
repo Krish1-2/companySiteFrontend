@@ -71,7 +71,6 @@ import axios from 'axios';
 import './Login.css'; // Import your CSS file
 import { useNavigate, Link } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
-import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function Login() {
     const initialValues = {
