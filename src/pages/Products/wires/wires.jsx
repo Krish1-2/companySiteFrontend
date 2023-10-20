@@ -6,9 +6,19 @@ export default function Wires() {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
+    var accessToken=sessionStorage.getItem('accessToken');
+    if(accessToken==null){
+      accessToken='*';
+    }
+    const newAccessToken =  accessToken.replace(/^"|"$/g, '');
+    console.log(newAccessToken);
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000?item=pipes'); 
+        const response = await axios.get('http://localhost:8000?item=pipes',{
+          headers: {
+            // 'Content-Type': 'application/json',
+            'Authorization': `Bearer ${newAccessToken}`,
+          },}); 
         const brandNames = response.data.map(item => item.brand);
         setBrands(brandNames);
         // console.log(brands);

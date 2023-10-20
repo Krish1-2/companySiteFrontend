@@ -7,8 +7,18 @@ export default function Cables() {
 
   useEffect(() => {
     const fetchData = async () => {
+      var accessToken=sessionStorage.getItem('accessToken');
+      if(accessToken==null){
+        accessToken='*';
+      }
+      const newAccessToken =  accessToken.replace(/^"|"$/g, '');
+      console.log(newAccessToken);
       try {
-        const response = await axios.get('http://localhost:8000?item=cables'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:8000?item=cables',{
+          headers: {
+            // 'Content-Type': 'application/json',
+            'Authorization': `Bearer ${newAccessToken}`,
+          },}); 
         // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
         console.log(brands);

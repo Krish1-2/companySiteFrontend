@@ -9,13 +9,25 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
     const [selectedBrandIndex, setSelectedBrandIndex] = useState(null);
     const [tableData, setTableData] = useState([]); 
     const [width,setWidth]=useState();
+    
 
     const rates = async (index) => {
+      
       setSelectedBrandIndex(index);
       const item = category;
-  
+
+      const accessToken = sessionStorage.getItem('accessToken');
       console.log(item);
-      await axios.get(`http://localhost:8000?item=${item}`)
+      var newAccessToken =  accessToken.replace(/^"|"$/g, '');
+      if(newAccessToken==null){
+        newAccessToken='*';
+      }
+      console.log(newAccessToken);
+      await axios.get(`http://localhost:8000?item=${item}`,{
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${newAccessToken}`,
+        },})
         .then(
           (res) => {
             setTableData(res.data);

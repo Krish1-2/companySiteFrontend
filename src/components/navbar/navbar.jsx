@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Navbar() {
   
@@ -8,6 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpenDownload, setIsDropdownOpenDownload] = useState(false);
+  const [fontSize, setFontSize] = useState(16); 
 
   const handleLogin = () => {
     setIsAuthenticated(true);
@@ -31,9 +33,54 @@ export default function Navbar() {
     console.log(isDropdownOpenDownload);
   };
 
-  const handleLogout = () => {
+  const handleLogout =async() => {
     setIsAuthenticated(false);
+    var accessToken=sessionStorage.getItem('accessToken');
+    if(accessToken==null){
+      accessToken='#';
+    }
+    const newAccessToken =  accessToken.replace(/^"|"$/g, '');
+    console.log(newAccessToken);
+    sessionStorage.removeItem('accessToken');
+    try {
+      const response = await axios.post(
+        'http://localhost:8000/logout/',
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${newAccessToken}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+         console.log('Logout successful');
+         } else {
+         console.error('Logout failed');
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newFontSize = window.innerWidth < 1025 ? 18 : 23; 
+      setFontSize(newFontSize);
+      const navLinks = document.querySelectorAll(".nav-link");
+  
+      navLinks.forEach((navLink) => {
+    navLink.style.fontSize = `${newFontSize}px`;
+    });
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div>
@@ -76,9 +123,19 @@ export default function Navbar() {
           
            <Link className='nav-link' to='/contact'>CONTACT US</Link>
            <Link className='nav-link' to='/review'>REVIEWS</Link>
-           {/* <Link className='nav-link' to='/contact'>LOGIN</Link>
-           <Link className='nav-link' to='/review'>REGISTER</Link> */}
-        </ul>
+           <div className='login-register-div'>
+        {isAuthenticated ? (
+          <Link className='nav-link' to='/login' onClick={handleLogout}>LOGOUT</Link>
+   
+        ) : (
+          <>
+              <Link className='nav-link' to='/login' onClick={handleLogin}>LOGIN</Link>
+            
+              <Link className='nav-link' to='/register' onClick={handleLogin}>REGISTER</Link>
+          </>
+        )}
+      </div>
+          </ul>
       </div>
     </nav>
     </div>

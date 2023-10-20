@@ -6,9 +6,18 @@ export default function Switches() {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
+    var accessToken=sessionStorage.getItem('accessToken');
+    if(accessToken==null){
+      accessToken='*';
+    }
+    const newAccessToken =  accessToken.replace(/^"|"$/g, '');
+    console.log(newAccessToken);
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000?item=accessories'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:8000?item=accessories',{
+          headers: {
+            'Authorization': `Bearer ${newAccessToken}`,
+          },});
         // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
         setBrands(brandNames);

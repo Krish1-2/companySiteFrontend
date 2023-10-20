@@ -7,8 +7,17 @@ export default function Pipes() {
 
   useEffect(() => {
     const fetchData = async () => {
+      var accessToken=sessionStorage.getItem('accessToken');
+      if(accessToken==null){
+        accessToken='*';
+      }
+      const newAccessToken =  accessToken.replace(/^"|"$/g, '');
+      console.log(newAccessToken);
       try {
-        const response = await axios.get('http://localhost:8000?item=pipes'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:8000?item=pipes',{
+          headers: {
+            'Authorization': `Bearer ${newAccessToken}`,
+          },}); 
         // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
         setBrands(brandNames);
