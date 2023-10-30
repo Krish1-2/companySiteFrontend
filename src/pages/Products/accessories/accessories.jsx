@@ -32,9 +32,9 @@ export default function Switches() {
   return (
     <Product
       category="accessories"
-      mainimage1='./images/pipes/mainCard1.png'
-      mainimage2='./images/pipes/pipe1.png'
-      mainimage3='./images/pipes/mainCard3.png'
+      mainimage1='./images/accessories/mainCard1.jpg'
+      mainimage2='./images/accessories/mainCard2.jpg'
+      mainimage3='./images/accessories/mainCard3.jpg'
       brands={brands} // Pass the fetched brands to the Product component
     />
   );

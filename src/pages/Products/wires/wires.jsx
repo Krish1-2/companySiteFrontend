@@ -33,9 +33,9 @@ export default function Wires() {
   return (
     <Product
       category="wires"
-      mainimage1='./images/pipes/mainCard1.png'
-      mainimage2='./images/pipes/pipe1.png'
-      mainimage3='./images/pipes/mainCard3.png'
+      mainimage1='./images/wires/mainCard1.jpeg'
+      mainimage2='./images/wires/mainCard2.jpeg'
+      mainimage3='./images/wires/mainCard3.jpg'
       brands={brands} // Pass the fetched brands to the Product component
     />
   );

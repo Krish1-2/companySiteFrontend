@@ -34,9 +34,9 @@ export default function Cables() {
   return (
     <Product
       category="cables"
-      mainimage1='./images/pipes/mainCard1.png'
-      mainimage2='./images/pipes/pipe1.png'
-      mainimage3='./images/pipes/mainCard3.png'
+      mainimage1='./images/cables/mainCard1.jpg'
+      mainimage2='./images/cables/mainCard2.jpg'
+      mainimage3='./images/cables/mainCard3.jpg'
       brands={brands} 
     />
   );
