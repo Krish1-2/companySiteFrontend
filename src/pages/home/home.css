@@ -56,7 +56,6 @@
 
 .qoute-image{
   width: 75%;
-  height: 45vh;
   background: url('../../../public/images/2.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -202,7 +201,6 @@ position: relative;
 
   .qoute-image{
     width: 90%;
-    height: 40vh;
   }
   .blackend-qoute-div{
     font-size: 1.9rem;
