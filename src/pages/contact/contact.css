@@ -153,3 +153,10 @@ font-weight: 400;
     }
     .maps{width:100%}
 }
+
+.link-style {
+    text-decoration: none; /* Remove underline */
+    font-size: 24px; /* Use the same font size as parent (h5) */
+    line-height: 1; /* Adjust line height to make it similar to h5 */
+    color: inherit; /* Use the same color as parent (text-dark) */
+  }

@@ -12,6 +12,7 @@ import RegisterForm from './pages/auth/RegisterForm';
 import LoginForm from './pages/auth/LoginForm';
 import Accessories from './pages/Products/accessories/accessories';
 import Review from './pages/review/review';
+import Expertise from './pages/expertise/expertise';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/accessories' element={<Accessories/>}/>
           <Route path="/review" element={<Review />} /> 
+          <Route path='/expertise' element={<Expertise/>}/>
         </Routes>
         <Footer/>
     </BrowserRouter>
