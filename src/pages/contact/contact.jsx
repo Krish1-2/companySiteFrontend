@@ -73,7 +73,7 @@ export default function Contact(){
               console.log(values)
               const { email, name, message,phone} = values;
               alert(JSON.stringify(values, null, 2));
-              console.log( email, name, message,phone)
+              console.log( email, name, message,phone); 
                },
   
           })  

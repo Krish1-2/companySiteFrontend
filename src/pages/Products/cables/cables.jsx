@@ -19,10 +19,10 @@ export default function Cables() {
             // 'Content-Type': 'application/json',
             'Authorization': `Bearer ${newAccessToken}`,
           },}); 
-        // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
         console.log(brands);
-        setBrands(brandNames);
+        const uniqueBrands = [...new Set(brandNames)];
+        setBrands(uniqueBrands);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }

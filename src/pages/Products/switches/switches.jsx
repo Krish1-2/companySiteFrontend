@@ -20,7 +20,8 @@ export default function Switches() {
             'Authorization': `Bearer ${newAccessToken}`,
           },}); 
         const brandNames = response.data.map(item => item.brand);
-        setBrands(brandNames);
+        const uniqueBrands = [...new Set(brandNames)];
+        setBrands(uniqueBrands);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }

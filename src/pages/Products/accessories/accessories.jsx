@@ -18,9 +18,9 @@ export default function Switches() {
           headers: {
             'Authorization': `Bearer ${newAccessToken}`,
           },});
-        // Assuming the API response contains an array of objects with brand names
         const brandNames = response.data.map(item => item.brand);
-        setBrands(brandNames);
+        const uniqueBrands = [...new Set(brandNames)];
+        setBrands(uniqueBrands);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }

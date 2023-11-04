@@ -87,7 +87,9 @@ function Login() {
             .post('http://127.0.0.1:8000/api/user/login/', values)
             .then((response) => {
                 console.log(values, response);
+                console.log(response.data.access);
                 sessionStorage.setItem('user', JSON.stringify(response.data.user));
+                sessionStorage.setItem('accessToken', JSON.stringify(response.data.access));
                 alert('Login successful');
                 setLoggedIn(true);
             })
@@ -120,8 +122,8 @@ function Login() {
                         <ErrorMessage name="password" component="div" />
                     </div>
                     <div className="space"></div>
-                    <button type="submit" className="submit-auth-btn">
-                        Login
+                    <button type="submit" className="submit-auth-btn" >
+                    <Link to="/"> Login</Link>
                     </button>
                 </Form>
             </Formik>

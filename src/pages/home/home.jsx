@@ -75,7 +75,7 @@ return(
       <div className="line"></div>
          <div className="space"></div> 
         <div className="text-div desktop ">        
-With immense pride, we introduce ourselves as pioneers in the electrical trade, boasting over 80 years of experience and knowledge spanning three generations. This legacy positions us as industry leaders, well-prepared to meet the diverse needs of our valued clients. 
+With immense pride, we introduce ourselves as pioneers in the electrical trade, boasting over 50 years of experience and knowledge spanning three generations. This legacy positions us as industry leaders, well-prepared to meet the diverse needs of our valued clients. 
 Our extensive experience, goodwill, robust resources, skilled staff, and efficient logistics enable us to ensure product availability and swift deliveries, reaffirming our status as a trusted partner in all electrical endeavors. 
 As we embrace the future, we carry forward the wisdom of our past while remaining adaptable to new technologies and opportunities, secure in our commitment to upholding our legacy of excellence.
          </div>

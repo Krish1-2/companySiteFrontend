@@ -94,6 +94,9 @@ font-weight: 500;
     width:33.33%;
 display: flex;
 justify-content: space-around; 
+
+/* border-width: 10px; */
+/* border:  white; */
 }
 
 .card2Space1{

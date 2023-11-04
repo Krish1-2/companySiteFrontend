@@ -9,7 +9,7 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
     const [selectedBrandIndex, setSelectedBrandIndex] = useState(null);
     const [tableData, setTableData] = useState([]); 
     const [width,setWidth]=useState();
-    
+    const [showTable, setShowTable] = useState(false); 
 
     const rates = async (index) => {
       
@@ -54,6 +54,8 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
             setWidth('40%');
           }
         };
+        
+       
     
         handleResize();
      window.addEventListener('resize', handleResize);
@@ -62,6 +64,13 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
         };
       }, []);
 
+      useEffect(() => {
+        if (selectedBrandIndex !== null) {
+            setShowTable(true);
+        } else {
+            setShowTable(false);
+        }
+    }, [selectedBrandIndex]);
 
     return(
         <div className="product-main-div">
@@ -124,13 +133,36 @@ export default function Product({category,mainimage1,mainimage2,mainimage3,compa
                                 );                       
                                 return (
                                     <div className="card2Space">
-                                    <Card2 text={textWithLineBreaks} heading={item.desc} image="./images/time.jpeg" /> 
+                                    <Card2 text={textWithLineBreaks} heading={item.desc} image="./images/logo.png" /> 
                                     <div className="card2Space1"></div>
                                     </div>
                                 );
                                 })}
                     </div>
                 )}
+                {/* {showTable ? (
+                  <table className="product-table">
+                      <thead>
+                          <tr>
+                              <th>Description</th>
+                              <th>Rate</th>
+                              <th>Size</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {filteredTableData().map((item, index) => (
+                              <tr key={index}>
+                                  <td>{item.desc}</td>
+                                  <td>{item.rate}</td>
+                                  <td>{item.size}</td>
+                              </tr>
+                          ))}
+                      </tbody>
+                  </table>
+
+                ) : (
+                    <h1></h1>
+                )} */}
             </div>
             <div className="space"></div> 
             </div>

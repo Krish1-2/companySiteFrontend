@@ -1,16 +1,53 @@
 import './review.css';
 import { useFormik } from 'formik';
-import { useRef } from 'react';
+import { useRef,useEffect,useState} from 'react';
 import axios from 'axios';
 
 export default function Review() {
   const currentDate = new Date();
+  const names=[];
+  const reviewsText=[];
+  const [reviews, setReviews] = useState({});
+  const accessToken = sessionStorage.getItem('accessToken');
 
-    const reviews = {
-        krish: 'I recently dined at [RestaurantName] and was thoroughly impressed by both the exquisite cuisine and the impeccable service. The menu showcased a variety of innovative dishes, blending bold flavors and beautiful presentation. The attentive and knowledgeable staff ensured that our meal was a memorable one, providing excellent recommendations and ensuring our satisfaction. I can’t recommend [RestaurantName] enough for a fantastic dining experience.',
-        krisha: 'Lorem ipsum dolor sit amet...',
-        ami: 'Lorem ipsum dolor sit amet...',
-    };
+    var newAccessToken = "k";
+    if (accessToken==null) {
+      newAccessToken='*';
+      }
+      else{
+        newAccessToken = accessToken.replace(/^"|"$/g, '');
+      }
+
+  useEffect(() => {
+    review();
+  }, []);
+
+  const review = async()=>{
+      await axios.get(`http://localhost:8000/review`,{
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${newAccessToken}`,
+        },})
+        .then(
+          (res) => {
+            console.log(res);
+            const updatedReviews = {};
+           for(var i=res.data.length-1;i>res.data.length-4;i--){
+            if(res.data[i].name!==undefined){
+                names[i]=res.data[i].name;
+                reviewsText[i]=res.data[i].review;
+               updatedReviews[names[i]]=reviewsText[i];
+                console.log(i+names[i])
+            }
+          }
+           setReviews(updatedReviews)
+          }
+        )
+        .catch(err => {
+          setReviews({admin:"please login in to see reviews"});
+          console.log(reviews);
+        });
+    }
 
     const validate = values => {
         const errors = {};
@@ -47,28 +84,25 @@ export default function Review() {
             },
             validate,
             onSubmit:async values => {
-              console.log(values)
+              // console.log(values)
+
               var day=currentDate.getDate();
               var year=currentDate.getFullYear();
               var month=currentDate.getMonth();
               var date=year+"-"+month+"-"+day;
+
               const { email, name, review,product} = values;
-              alert(JSON.stringify(values, null, 2));
-              console.log( email, name, review,product)
-
+              // alert(JSON.stringify(values, null, 2));
+         
               const post = { email:email,name:name,review:review,product:product,date:date}  
-              await axios.post(`http://127.0.0.1:8000/review`,post)
+              await axios.post(`http://127.0.0.1:8000/review`,post,
+               { headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${newAccessToken}`,
+                }})
               .then(
+                console.log(newAccessToken),
                 alert("thankyou for the feedback")
-              )
-              .catch(err => {
-                console.log(err);
-              });
-
-              await axios.get(`http://127.0.0.1:8000/review`)
-              .then(res=>{
-                console.log(res.data)
-               }
               )
               .catch(err => {
                 console.log(err);
@@ -168,4 +202,4 @@ export default function Review() {
                 </section>
         </div>
     );
-}
+ }

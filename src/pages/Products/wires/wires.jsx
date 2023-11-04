@@ -20,8 +20,8 @@ export default function Wires() {
             'Authorization': `Bearer ${newAccessToken}`,
           },}); 
         const brandNames = response.data.map(item => item.brand);
-        setBrands(brandNames);
-        // console.log(brands);
+        const uniqueBrands = [...new Set(brandNames)];
+        setBrands(uniqueBrands);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }
