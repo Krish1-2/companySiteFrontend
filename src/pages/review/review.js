@@ -44,6 +44,8 @@ export default function Review() {
           }
         )
         .catch(err => {
+          console.log("hi")
+          console.log(err)
           setReviews({admin:"please login in to see reviews"});
           console.log(reviews);
         });
